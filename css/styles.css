@@ -42,7 +42,7 @@ p {
 
 /* ---- Layout Rules ---- */
 main {
-	margin: 10vh 1em 10vh;
+	margin: 20vh 1em 10vh;
 }
 
 .main-hero {
@@ -58,6 +58,27 @@ section {
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+/* Mobile Menu */
+
+.mobile__menu {
+	display: none;
+	flex-direction: column;
+	justify-content: center;
+	padding: 10px;
+	margin-right: 1rem;
+}
+.mobile__menu span {
+	width: 20px;
+	display: block;
+	border: 1px solid black;
+	margin: 3px;
+}
+
+.navbar__menu {
+	display: flex;
+	justify-content: flex-end;
+}
+
 .navbar__menu ul {
 	padding-left: 0;
 	margin: 0;
@@ -87,7 +108,30 @@ section {
 	background: #333;
 	color: #fff;
 }
-
+@media screen and (max-width: 767px) {
+	.mobile__menu {
+		display: flex;
+		cursor: pointer;
+	}
+	.navbar__menu ul {
+		position: absolute;
+		display: flex;
+		flex-direction: column;
+		background-color: #fff;
+		top: 55px;
+		width: 80%;
+		right: 50%;
+		transform: translate(50%, -200%);
+		border-radius: 10px;
+		align-items: flex-start;
+		padding: 1rem;
+		z-index: 50;
+		transition: 0.25s;
+	}
+	.navbar__menu ul.show__menu {
+		transform: translate(50%, 0);
+	}
+}
 /* Header Styles */
 .page__header {
 	background: #fff;
@@ -95,6 +139,18 @@ section {
 	top: 0;
 	width: 100%;
 	z-index: 5;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.page__header p.logo {
+	color: #0f2248;
+	font-size: 1.5rem;
+	line-height: 0;
+	font-weight: bold;
+	margin-left: 2rem;
+	letter-spacing: 8px;
 }
 
 /* Footer Styles */
@@ -238,17 +294,17 @@ section.section__active .landing__container::after {
 	bottom: 35px;
 	right: 35px;
 	color: black;
-	padding: 5px;
+	padding: 8px;
 	background-color: rgba(255, 255, 255, 0.727);
-	border-radius: 5px;
+	border-radius: 50%;
 	display: none;
 }
 .scroll-to-top span {
 	display: block;
-	border: 15px solid;
+	border: 12px solid;
 	border-color: transparent transparent rgb(5, 26, 104) transparent;
 	position: relative;
-	bottom: 9px;
+	bottom: 7px;
 }
 
 .scroll-to-top.show {

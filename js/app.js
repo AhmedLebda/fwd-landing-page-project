@@ -17,6 +17,8 @@
 
 const pageSections = document.querySelectorAll("section")
 const navList = document.querySelector('#navbar__list')
+const header = document.querySelector('header')
+const toggleMenu = document.querySelector('#toggleMenu')
 
 // ===========> build nav function <=========== 
 
@@ -44,7 +46,7 @@ buildNav(pageSections);
 // ===========> Add class 'active' to section when near top of viewport <=========== 
 function scrollActive() {
     pageSections.forEach(section => {
-        if (section.getBoundingClientRect().top <= 50 && section.getBoundingClientRect().bottom > 50) {
+        if (section.getBoundingClientRect().top <= 60 && section.getBoundingClientRect().bottom > 60) {
             section.classList.add('section__active')
             document.querySelector(`a[href='#${section.id}']`).classList.add("link__active")
         } else {
@@ -63,7 +65,12 @@ function scrollToSection(e) {
 
     const sectionId = e.target.getAttribute('href')
     const targetSection = document.querySelector(sectionId)
-    window.scrollTo({ top: targetSection.offsetTop - 20, left: 0, behavior: 'smooth' })
+    window.scrollTo({ top: targetSection.offsetTop - 50, left: 0, behavior: 'smooth' })
+
+    // Hiding menu on mobile when user clicks a link
+    if (navList.classList.contains('show__menu')) {
+        navList.classList.remove('show__menu')
+    }
 }
 [...navList.children].forEach(section => {
     section.addEventListener('click', scrollToSection);
@@ -81,15 +88,20 @@ function scrollTop() {
 }
 window.addEventListener('scroll', scrollTop)
 
-// ===========> Hide nav on scrolling down  <=========== 
+// ===========> Hide header on scrolling down  <=========== 
 
 let prevScroll = window.scrollY;
 window.addEventListener('scroll', () => {
     let currentScroll = window.scrollY;
     if (prevScroll < currentScroll) {
-        navList.style.display = 'none';
+        header.style.display = 'none';
     } else {
-        navList.style.display = 'block'
+        header.style.display = 'flex'
     }
     prevScroll = currentScroll
+})
+
+// Mobile nav bar menu
+toggleMenu.addEventListener('click', () => {
+    navList.classList.toggle('show__menu')
 })
