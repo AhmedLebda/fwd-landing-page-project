@@ -144,13 +144,15 @@ section {
 	align-items: center;
 }
 
-.page__header p.logo {
+.page__header a.logo {
 	color: #0f2248;
 	font-size: 1.5rem;
 	line-height: 0;
 	font-weight: bold;
 	margin-left: 2rem;
 	letter-spacing: 8px;
+	text-decoration: none;
+	display: block;
 }
 
 /* Footer Styles */

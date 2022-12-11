@@ -65,7 +65,7 @@ function scrollToSection(e) {
 
     const sectionId = e.target.getAttribute('href')
     const targetSection = document.querySelector(sectionId)
-    window.scrollTo({ top: targetSection.offsetTop - 50, left: 0, behavior: 'smooth' })
+    window.scrollTo({ top: targetSection.offsetTop - 30, left: 0, behavior: 'smooth' })
 
     // Hiding menu on mobile when user clicks a link
     if (navList.classList.contains('show__menu')) {

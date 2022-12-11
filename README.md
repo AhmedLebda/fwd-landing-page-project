@@ -1,13 +1,31 @@
 # Landing Page Project
 
+This is a project for [FWD web development professional track](https://egfwd.com/specializtion/web-development-professional/).
+
+## Links
+
+- Live Site URL: [live site URL](https://ahmedlebda.github.io/fwd-landing-page-project/)
+
 ## Table of Contents
 
-* [Instructions](#instructions)
+- [Overview](#overview)
+- [Links](#links)
+- [Built with](#built-with)
+- [Author](#author)
 
-## Instructions
+## Overview
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+Users should be able to:
 
-To get started, open `js/app.js` and start building out the app's functionality
+- View the optimal layout for the app depending on their device's screen size
+- See hover states for all interactive elements on the page
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+## Built with
+
+- HTML
+- CSS
+- JS
+
+## Author
+
+- Github - [Ahmed Lebda](https://github.com/AhmedLebda)
